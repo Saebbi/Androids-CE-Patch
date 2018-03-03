@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingCategoryDef>
+      <defName>AmmoRebelpistol</defName>
+      <label>Rebel Pistol</label>
+      <parent>AmmoAdvanced</parent>
+      <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
+    </ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>AmmoSet_Rebelpistol</defName>
+    <label>Rebel Pistol ammo</label>
+    <ammoTypes>
+      <Ammo_Rebelpistol>ChjAndroidBullet_Rebelpistol</Ammo_Rebelpistol>
+    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+
+  <ThingDef Name="RebelpistolBase" ParentName="AmmoBase" Abstract="True">
+    <description>Rebel Pistol ammo</description>
+    <statBases>
+	  <Mass>0.01</Mass>
+	  <Bulk>0.02</Bulk>
+    </statBases>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+      <li>CE_AutoEnableCrafting</li>
+    </tradeTags>
+    <thingCategories>
+      <li>AmmoRebelpistol</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="RebelpistolBase">
+    <defName>Ammo_Rebelpistol</defName>
+    <label>Rebel Pistol cartridge</label>
+    <graphicData>
+      <texPath>Things/Ammo/Rifle/FMJ</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.95</MarketValue>
+    </statBases>
+    <ammoClass>FullMetalJacket</ammoClass>
+  </ThingDef>
+	
+	<!-- ================== Projectiles ================== -->
+
+  <ThingDef Name="BaseRebelpistol" ParentName="BaseBullet" Abstract="true">
+    <graphicData>
+      <texPath>Things/Projectile/Charge_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <speed>70</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseRebelpistol">
+    <defName>ChjAndroidBullet_Rebelpistol</defName>
+    <label>Rebel Pistol</label>
+    <projectile>
+      <damageAmountBase>4</damageAmountBase>
+      <armorPenetration>0.3</armorPenetration>
+    </projectile>
+  </ThingDef>
+	
+</Defs>

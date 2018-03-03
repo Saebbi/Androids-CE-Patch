@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+    <defName>ChjAndroidGun_Rebelpistol</defName>
+    <statBases>
+      <Mass>1.50</Mass>
+      <RangedWeapon_Cooldown>0.4</RangedWeapon_Cooldown>
+      <SightsEfficiency>1.0</SightsEfficiency>
+      <ShotSpread>0.12</ShotSpread>
+      <SwayFactor>1.50</SwayFactor>
+      <Bulk>1.50</Bulk>
+      <WorkToMake>15000</WorkToMake>
+    </statBases>
+    <costList>
+		<Steel>40</Steel>
+		<Component>1</Component>
+	</costList>
+    <Properties>
+      <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>ChjAndroidBullet_Rebelpistol</defaultProjectile>
+      <warmupTime>0.3</warmupTime>
+      <range>20</range>
+      <soundCast>ShotChargeRifle</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>9</muzzleFlashScale>
+	  <ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+        <burstShotCount>6</burstShotCount>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+    </Properties>
+    <AmmoUser>
+      <magazineSize>12</magazineSize>
+      <reloadTime>3.75</reloadTime>
+      <ammoSet>AmmoSet_Rebelpistol</ammoSet>
+    </AmmoUser>
+    <FireModes>
+      <aiUseBurstMode>FALSE</aiUseBurstMode>
+    </FireModes>
+    <weaponTags>
+      <li>SimpleGun</li>
+    </weaponTags>
+  </Operation>
+
+  <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+    <defName>ChjAndroidGun_RebelRifle</defName>
+    <statBases>
+      <Mass>3.50</Mass>
+      <RangedWeapon_Cooldown>1.4</RangedWeapon_Cooldown>
+      <SightsEfficiency>1.0</SightsEfficiency>
+      <ShotSpread>0.1</ShotSpread>
+      <SwayFactor>1.5</SwayFactor>
+      <Bulk>4.50</Bulk>
+      <WorkToMake>50000</WorkToMake>
+    </statBases>
+    <costList>
+		<Steel>80</Steel>
+		<Component>7</Component>
+    </costList>
+    <Properties>
+		<recoilAmount>0.50</recoilAmount>
+      <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>ChjAndroidBullet_RebelRifle</defaultProjectile>
+      <warmupTime>2.0</warmupTime>
+      <range>40</range>
+      <soundCast>ShotChargeRifle</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>9</muzzleFlashScale>
+	  <ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+        <burstShotCount>1</burstShotCount>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+    </Properties>
+    <AmmoUser>
+      <magazineSize>42</magazineSize>
+      <reloadTime>4.25</reloadTime>
+      <ammoSet>AmmoSet_RebelRifle</ammoSet>
+    </AmmoUser>
+    <FireModes>
+    	<aiUseBurstMode>FALSE</aiUseBurstMode>
+    	<aiAimMode>AimedShot</aiAimMode>
+    </FireModes>
+  </Operation>
+  
+</Patch>

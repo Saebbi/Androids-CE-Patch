@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingCategoryDef>
+      <defName>AmmoRebelRifle</defName>
+      <label>Rebel Rifle</label>
+      <parent>AmmoAdvanced</parent>
+      <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
+    </ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>AmmoSet_RebelRifle</defName>
+    <label>Rebel Rifle ammo</label>
+    <ammoTypes>
+      <Ammo_RebelRifle>ChjAndroidBullet_RebelRifle</Ammo_RebelRifle>
+    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+
+  <ThingDef Name="RebelRifleBase" ParentName="AmmoBase" Abstract="True">
+    <description>Rebel Rifle ammo</description>
+    <statBases>
+	  <Mass>0.01</Mass>
+	  <Bulk>0.02</Bulk>
+    </statBases>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+      <li>CE_AutoEnableCrafting</li>
+    </tradeTags>
+    <thingCategories>
+      <li>AmmoRebelRifle</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="RebelRifleBase">
+    <defName>Ammo_RebelRifle</defName>
+    <label>Rebel Rifle cartridge</label>
+    <graphicData>
+      <texPath>Things/Ammo/Rifle/FMJ</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.95</MarketValue>
+    </statBases>
+    <ammoClass>FullMetalJacket</ammoClass>
+  </ThingDef>
+	
+	<!-- ================== Projectiles ================== -->
+
+  <ThingDef Name="BaseRebelRifle" ParentName="BaseBullet" Abstract="true">
+    <graphicData>
+      <texPath>Things/Projectile/Charge_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <speed>90</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseRebelRifle">
+    <defName>ChjAndroidBullet_RebelRifle</defName>
+    <label>Charge bolt</label>
+    <projectile>
+      <damageAmountBase>22</damageAmountBase>
+      <armorPenetration>0.7</armorPenetration>
+    </projectile>
+  </ThingDef>
+	
+</Defs>
